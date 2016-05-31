@@ -1,0 +1,51 @@
+{
+  "ability" : "Tiếp thu nhanh, ham học hỏi, có chí cầu tiến không sợ thất bại ",
+  "born" : "06/11/1995",
+  "country" : "Việt Nam",
+  "current" : "Sinh viên",
+  "description" : "Nhận dạy kèm các em từ lớp 1 - 11 về môn tiếng anh, bảo đảm bám sát chương trình dạy trên trường/lớp hoặc có nhu cầu học thêm.\\r\\n Bên cạnh đó cũng nhận kèm các bạn lớp 12 thi tốt nghiệp và đại học môn anh văn khối A1.",
+  "education" : "Trường đại học Khoa Học Tự Nhiên",
+  "email" : "hoangthaison985@gmail.com",
+  "exp" : "Chưa có",
+  "language" : "Tiếng Anh",
+  "name" : "Hoàng Thái Sơn",
+  "office" : "Tại gia",
+  "period" : "7/2013 - 7/2015",
+  "previous" : "Gia sư tiếng anh",
+  "proj" : {
+    "proj0" : "MyPaint 1.2.3 - Lập trình window",
+    "proj1" : "Caro - Lập trình window",
+    "proj2" : "Game đua xe – Kĩ thuật lập trình"
+  },
+  "score" : {
+    "score0" : "70+",
+    "score1" : "70+",
+    "score10" : 32,
+    "score2" : 65,
+    "score3" : 63,
+    "score4" : 62,
+    "score5" : 60,
+    "score6" : 60,
+    "score7" : "55+",
+    "score8" : 50,
+    "score9" : 47
+  },
+  "sdt" : "01634837660",
+  "skill" : {
+    "skill0" : "Ielts",
+    "skill1" : "C#",
+    "skill10" : "Judo",
+    "skill2" : "C/C++",
+    "skill3" : "Java",
+    "skill4" : "HTML",
+    "skill5" : "CSS",
+    "skill6" : "Javascript",
+    "skill7" : "Chess",
+    "skill8" : "Football",
+    "skill9" : "Singing"
+  },
+  "specialist" : "chuyên ngành Kĩ thuật phần mềm, khoa Công nghệ thông tin",
+  "student" : "Sinh viên tại trường đại học Khoa Học Tự Nhiên",
+  "work" : "Lập trình viên",
+  "year" : "2013 - 2017"
+}

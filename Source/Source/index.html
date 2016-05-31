@@ -1,0 +1,634 @@
+﻿<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>My Website</title>
+    <link rel="stylesheet" type="text/css" href="css/editme.demo.css" media="screen">
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script src="js/angular.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/editme.demo.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/firebase.js"></script>
+	<script src="js/angularfire.min.js"></script>
+</head>
+<body ng-controller="mywebCtrl">
+	<div class="backgroundcolor">
+	<div class="info">
+		<div class="image">
+			<img src = "./image/son.jpg" alt="Avatar">
+		</div>
+		<div class="profile">
+			<div class="basic" >				
+					<div class="name">
+					<h3 class="hoten">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Full Name" name="name" ng-model="person.name" ng-required="true">
+						</sk-editme>		
+					</h3>
+					</div>
+					<div class="pupil">
+					<p class="chuvua">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Job" name="job" ng-model="person.student" ng-required="true">
+						</sk-editme>
+					</p>
+					</div>
+			
+				<div class="combine">
+					<div class="country">
+						<a><sk-editme>
+							<input type="text" class="form-control" placeholder="Country" name="country" ng-model="person.country" ng-required="true">
+						</sk-editme></a>
+					</div>
+					<div><p>|&nbsp;&nbsp;&nbsp;&nbsp; </p></div>
+					<div class="work">
+						<a><sk-editme>
+							<input type="text" class="form-control" placeholder="Work" name="work" ng-model="person.work" ng-required="true">
+						</sk-editme></a>
+					</div>
+				</div>
+			</div>
+			<div class="extra">
+				<div class="extra1">
+					<p><a href="#curr">Current</a></p>
+					<p><a href="#prev">Previous</a></p>
+					<p><a href="#university">Education</a></p>
+				</div>
+				<div class="extra2">
+					<div class="component">
+					<p>
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Current job" name="curr" ng-model="person.current" ng-required="true">
+						</sk-editme>
+					</p>
+					</div>
+					<div class="component">
+					<p>
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Previous job" name="prev" ng-model="person.previous" ng-required="true">
+						</sk-editme>
+					</p>
+					</div>
+					<div  class="component">
+					<p>
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Education" name="edu" ng-model="person.education" ng-required="true">
+						</sk-editme>
+					</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="backgr" >
+		<div class="header">
+			<p>Background</p>
+		</div>
+		
+		<!-- Mục summary -->
+		 <div class="mucluc" ng-init="listSum=[]">
+			<div class="tieude">
+				<div class="icon">
+					<img src="./image/ex1.png"/>
+				</div>
+				<div class="content">
+		     			<p>Summary</p>
+				</div>
+				<div class="add">
+		     			<button class="btn btn-default" data-toggle="modal" data-target="#modalSum">+Add Summary</button>
+				</div>	
+			</div>
+			
+			<div>
+				<!-- Modal -->
+				<div class="modal fade" id="modalSum" role="dialog">
+					<div class="modal-dialog modal-ld">
+    
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<label>Label:</label><br>
+							<input type="text" class="form-control" placeholder="Label" ng-model="label"><br>
+							<label>Information:</label><br>
+							<textarea class="form-control" row="4" placeholder="Information" ng-model="information"></textarea><br>
+						</div>
+						<div class="modal-footer">
+							<button ng-click="addSum()" class="btn btn-primary" data-dismiss="modal">Save</button>
+							<button class="btn btn-default" data-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			
+			<div id="curr" class="description">
+			<h4>Thông tin cơ bản:</h4>
+				<div class="form-group row">
+					<p class="col-md-3">Họ và tên: </p>
+					<div class="col-md-4">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Full name" name="myName" ng-model="person.name" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="form-group row">
+					<p class="col-md-3">Ngày tháng năm sinh: </p>
+					<div class="col-md-4">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Born" name="myBorn" ng-model="person.born" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="form-group row">
+					<p class="col-md-3">Email: </p>
+					<div class="col-md-4">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Email" name="myEmail" ng-model="person.email" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="form-group row">
+					<p class="col-md-3">Ngoại ngữ: </p>
+					<div class="col-md-4">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Language" name="myLanguage" ng-model="person.language" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="form-group row">
+					<p class="col-md-3">Kinh nghiệm làm việc: </p>
+					<div class="col-md-4">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Exp" name="myExp" ng-model="person.exp" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="form-group row">
+					<p class="col-md-3">Điểm mạnh: </p>
+					<div class="col-md-4">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Advantages" name="myAbility" ng-model="person.ability" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				
+				<div class="form-group row" ng-repeat="sum in listSum">
+					<p class="col-md-3">{{sum.label}}</p>
+					<div class="col-md-4">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Information" name="information" ng-model="sum.information" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				
+				<hr>
+			</div>	
+		</div>
+		
+		<!-- Mục Experience -->
+		<div class="mucluc" ng-init="listExp=[]">
+		     <div class="tieude">
+				<div class="icon">
+					<img src="./image/ex.png">
+				</div>
+				<div id="prev" class="content">
+		     			<p>Experience</p>
+				</div>
+				<div class="add">
+		     			<button class="btn btn-default" data-toggle="modal" data-target="#modalExp">+Add Experience</button>
+				</div>	
+			</div>
+			
+			<div>
+				<!-- Modal -->
+				<div class="modal fade" id="modalExp" role="dialog">
+					<div class="modal-dialog modal-ld">
+    
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<label>Title:</label><br>
+							<input type="text" class="form-control" placeholder="Title" ng-model="title"><br>
+							<label>Location:</label><br>
+							<input type="text" class="form-control" placeholder="Location" ng-model="location1"><br>
+							<label>Period:</label><br>
+							<input type="text" class="form-control" placeholder="Period" ng-model="period"><br>
+							<label>Description:</label><br>
+							<textarea class="form-control" row="4" placeholder="Description" ng-model="description"></textarea>
+						</div>
+						<div class="modal-footer">
+							<button ng-click="addExp()" class="btn btn-primary" data-dismiss="modal">Save</button>
+							<button class="btn btn-default" data-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			
+			<div class="description">
+				<div>
+                    <h4>
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Previous job" name="job2" ng-model="person.previous" ng-required="true">
+						</sk-editme>
+					</h4>
+					<p>
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Location" name="office" ng-model="person.office" ng-required="true">
+						</sk-editme>
+					</p>
+					<p>
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Period" name="period" ng-model="person.period" ng-required="true">
+						</sk-editme>
+					</p>
+						<sk-editme>
+							<textarea class="form-control" ng-model="person.description" ng-required="true"></textarea>
+						</sk-editme>
+					<hr>
+				</div>	
+					
+				<div ng-repeat="exp in listExp">
+					<h4>
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Job" name="title" ng-model="exp.title" ng-required="true">
+						</sk-editme>
+					</h4>
+					<p>
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Location" name="location1" ng-model="exp.location1" ng-required="true">
+						</sk-editme>
+					</p>
+					<p>
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Period" name="period1" ng-model="exp.period" ng-required="true">
+						</sk-editme>
+					</p>
+						<sk-editme>
+							<textarea class="form-control" ng-model="exp.description" ng-required="true"></textarea>
+						</sk-editme>
+					<hr>
+				</div>
+			</div>
+        </div>
+
+		<!-- Mục project -->
+		<div class="mucluc" ng-init="listProj=[]">
+		     <div class="tieude">
+				<div class="icon">
+					<img src="./image/ex4.jpg">
+				</div>
+				<div class="content">
+		     			<p>Project</p>
+				</div>
+				<div class="add">
+		     			<button class="btn btn-default" data-toggle="modal" data-target="#modalProj">+Add Project</button>
+				</div>	
+			</div>
+			
+			<div>
+				<!-- Modal -->
+				<div class="modal fade" id="modalProj" role="dialog">
+					<div class="modal-dialog modal-ld">
+    
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<label>Project:</label><br>
+							<input type="text" class="form-control" placeholder="Project" ng-model="proj"><br>
+						</div>
+						<div class="modal-footer">
+							<button ng-click="addProj()" class="btn btn-primary" data-dismiss="modal">Save</button>
+							<button class="btn btn-default" data-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			
+			<div class="description">
+                <h4>Các đồ án yêu thích trong các học kì trước:</h4>
+			   	<p>
+					<sk-editme>
+						<input type="text" class="form-control" placeholder="Project 1" name="proj1" ng-model="person.proj.proj0" ng-required="true">
+					</sk-editme>
+				</p>
+				<p>
+					<sk-editme>
+						<input type="text" class="form-control" placeholder="Project 2" name="proj2" ng-model="person.proj.proj1" ng-required="true">
+					</sk-editme>
+				</p>
+				<p>
+					<sk-editme>
+						<input type="text" class="form-control" placeholder="Project 3" name="proj3" ng-model="person.proj.proj2" ng-required="true">
+					</sk-editme>
+				</p>
+				<div ng-repeat="pro in listProj">
+					<p>					
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Project" name="proj" ng-model="pro.proj" ng-required="true">
+						</sk-editme>
+					</p>
+				</div>
+				<hr>
+			</div>
+        </div>
+		 
+		 <!-- Mục skill -->
+		<div class="mucluc" ng-init="listSkill=[]">
+			<div class="tieude">
+				<div class="icon">
+					<img src="./image/ex2.jpg"/>
+				</div>
+				<div class="content">
+		     			<p>Skill</p>
+				</div>
+				<div class="add">
+		     			<button class="btn btn-default" data-toggle="modal" data-target="#modalSkill">+Add Skill</button>
+				</div>				
+			</div>
+			
+			
+			
+			<div>
+				<!-- Modal -->
+				<div class="modal fade" id="modalSkill" role="dialog">
+					<div class="modal-dialog modal-sm">
+    
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<label>Skill:</label><br>
+							<input type="text" class="form-control" placeholder="Skill" ng-model="name"><br>
+							<label>Score:</label><br>
+							<input type="text" class="form-control" placeholder="Score" ng-model="score">
+						</div>
+						<div class="modal-footer">
+							<button ng-click="addSkill()" class="btn btn-primary" data-dismiss="modal">Save</button>
+							<button class="btn btn-default" data-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+				
+				<div class="skill">
+				<p>- Các kĩ năng:</p>
+				<div class="eachRow">
+					<div class="score">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Score 1" name="score1" ng-model="person.score.score0" ng-required="true">
+						</sk-editme>
+					</div>
+					<div class="stuff">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Skill 1" name="skill1" ng-model="person.skill.skill0" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="eachRow">
+					<div class="score">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Score 2" name="score2" ng-model="person.score.score1" ng-required="true">
+						</sk-editme>
+					</div>
+					<div class="stuff">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Skill 2" name="skill2" ng-model="person.skill.skill1" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="eachRow">
+					<div class="score">
+						
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Score 3" name="score3" ng-model="person.score.score2" ng-required="true">
+						</sk-editme>
+					</div>
+					<div class="stuff">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Skill 3" name="skill3" ng-model="person.skill.skill2" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="eachRow">
+					<div class="score">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Score 4" name="score4" ng-model="person.score.score3" ng-required="true">
+						</sk-editme>
+					</div>
+					<div class="stuff">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Skill 4" name="skill4" ng-model="person.skill.skill3" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="eachRow">
+					<div class="score">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Score 5" name="score5" ng-model="person.score.score4" ng-required="true">
+						</sk-editme>
+					</div>
+					<div class="stuff">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Skill 5" name="skill5" ng-model="person.skill.skill4" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="eachRow">
+					<div class="score">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Score 6" name="score6" ng-model="person.score.score5" ng-required="true">
+						</sk-editme>
+					</div>
+					<div class="stuff">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Skill 6" name="skill6" ng-model="person.skill.skill5" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="eachRow">
+					<div class="score">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Score 7" name="score7" ng-model="person.score.score6" ng-required="true">
+						</sk-editme>
+					</div>
+					<div class="stuff">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Skill 7" name="skill7" ng-model="person.skill.skill6" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div ng-repeat="skill in listSkill">
+					<div class="eachRow">
+						<div class="score">
+							<sk-editme>
+								<input type="text" class="form-control" placeholder="Score" ng-model="skill.score" ng-required="true">
+							</sk-editme>
+						</div>
+						<div class="stuff">
+							<sk-editme>
+								<input type="text" class="form-control" placeholder="Skill" ng-model="skill.name" ng-required="true">
+							</sk-editme>
+						</div>
+				</div>
+				</div>
+				
+				<p>- Tôi cũng có biết về: </p>
+				<div class="extraRow">
+				<div class="eachRow">
+					<div class="score">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Score 8" name="score10" ng-model="person.score.score7" ng-required="true">
+						</sk-editme>
+					</div>
+					<div class="stuff">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Skill 8" name="skill10" ng-model="person.skill.skill7" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="eachRow">
+					<div class="score">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Score 9" name="score10" ng-model="person.score.score8" ng-required="true">
+						</sk-editme>
+					</div>
+					<div class="stuff">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Skill 9" name="skill10" ng-model="person.skill.skill8" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="eachRow">
+					<div class="score">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Score 10" name="score10" ng-model="person.score.score9" ng-required="true">
+						</sk-editme>
+					</div>
+					<div class="stuff">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Skill 10" name="skill10" ng-model="person.skill.skill9" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				<div class="eachRow">
+					<div class="score">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Score 11" name="score10" ng-model="person.score.score10" ng-required="true">
+						</sk-editme>
+					</div>
+					<div class="stuff">
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Skill 11" name="skill10" ng-model="person.skill.skill10" ng-required="true">
+						</sk-editme>
+					</div>
+				</div>
+				</div>
+					
+			<hr>
+			</div>
+			
+		<!-- Mục education -->
+		<div class="mucluc" ng-init="listSchool=[]">
+			<div class="tieude">
+				<div class="icon">
+					<img src="./image/ex3.jpg"/>
+				</div>
+				<div id="university" class="content">
+		     			<p>Education</p>
+				</div>
+				<div class="add">
+		     			<button class="btn btn-default" data-toggle="modal" data-target="#modalSchool">+Add School</button>
+				</div>		
+			</div>
+			
+			<div>
+				<!-- Modal -->
+				<div class="modal fade" id="modalSchool" role="dialog">
+					<div class="modal-dialog modal-ld">
+    
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<label>School:</label><br>
+							<input type="text" class="form-control" placeholder="School" ng-model="school"><br>
+							<label>Field of study:</label><br>
+							<input type="text" class="form-control" placeholder="Field of study" ng-model="field"><br>
+							<label>Year:</label><br>
+							<input type="text" class="form-control" placeholder="Year" ng-model="year"><br>
+						</div>
+						<div class="modal-footer">
+							<button ng-click="addSchool()" class="btn btn-primary" data-dismiss="modal">Save</button>
+							<button class="btn btn-default" data-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+			
+			<div class="description2">
+				<div class="school">
+                     <h3>
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Education" name="edu" ng-model="person.education" ng-required="true">
+						</sk-editme>
+					</h3>
+					<p>
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Specialist" name="specialist" ng-model="person.specialist" ng-required="true">
+						</sk-editme>
+					</p>
+					<p>
+						<sk-editme>
+							<input type="text" class="form-control" placeholder="Year" name="year" ng-model="person.year" ng-required="true">
+						</sk-editme>
+					</p>
+					
+					<div ng-repeat="edu in listSchool">
+						<hr>
+						<h3>
+							<sk-editme>
+								<input type="text" class="form-control" placeholder="School" name="school" ng-model="edu.school" ng-required="true">
+							</sk-editme>
+						</h3>
+						<p>
+							<sk-editme>
+								<input type="text" class="form-control" placeholder="Field of study" name="field" ng-model="edu.field" ng-required="true">
+							</sk-editme>
+						</p>
+						<p>
+							<sk-editme>
+								<input type="text" class="form-control" placeholder="Year" name="year3" ng-model="edu.year" ng-required="true">
+							</sk-editme>
+						</p>
+						
+					</div>
+					
+				</div>
+				<div class="logo">
+					<img src = "./image/logo.jpg" alt="logo hcmus">
+				</div>
+			</div>
+			
+		</div>
+	</div>	
+	</div>
+</body>
+</html>
