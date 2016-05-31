@@ -1,0 +1,26 @@
+﻿[
+    {
+        "id": "profile", 
+        "imageUrl": "son.jpg", 
+        "name": "Hoàng Thái Sơn", 
+        "student": "Sinh viên tại Trường đại học Khoa Học Tự Nhiên",
+	  "country": "Việt Nam",
+	  "work": "Lập trình viên",
+	  "born":"06/11/1995",
+	  "email":"hoangthaison985@gmail.com",
+	  "sdt":"01634837660",
+	  "language":"Tiếng Anh",
+	  "exp":"Chưa có",
+	  "ability":"Tiếp thu nhanh, ham học hỏi, có chí cầu tiến không sợ thất bại",
+	  "current": "Sinh viên", 
+	  "previous": "Gia sư tiếng anh",
+	  "office":"Tại gia",
+	  "period":"7/2013 – 7/2015",
+	  "description":"Nhận dạy kèm các em từ lớp 1 - 11 về môn tiếng anh, bảo đảm bám sát chương trình dạy trên trường/lớp hoặc có nhu cầu học thêm.\r\n Bên cạnh đó cũng nhận kèm các bạn lớp 12 thi tốt nghiệp và đại học môn anh văn khối A1.",
+	  "education": "Trường đại học Khoa Học Tự Nhiên",
+	  "specialist": "chuyên ngành Kĩ thuật phần mềm, khoa Công nghệ thông tin",
+	  "proj":["MyPaint 1.2.3 - Lập trình window","Caro - Lập trình window.", "Game đua xe – Kĩ thuật lập trình"],	   "score":["70+","70+","65","63","62","60","60","55+","50","47","32"],
+         "skill": ["Ielts","C#","C/C++","Java","HTML","CSS","Javascript","Chess","Football","Singing","Judo"],
+	  "year": "2013 - 2017"
+	  	}
+]
