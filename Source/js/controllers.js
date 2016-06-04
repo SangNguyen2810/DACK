@@ -1,14 +1,92 @@
 'use strict';
 
 /* Controllers */
-var phonecatApp = angular.module('myApp', ['ngAnimate','shaka-editme']);
+var phonecatApp = angular.module('myApp', ['ngAnimate','xeditable','firebase','ngRoute','ngCookies']);
+phonecatApp.config(function($routeProvider,$locationProvider) {
+        $routeProvider
 
+            // route for the home page
+            .when('/login', {
+                templateUrl : 'pages/login.html',
+                controller  : 'mainController'
+            })
 
-phonecatApp.controller('mywebCtrl', function ($scope, $http) {
-  $http.get('profile.json').success(function(data) {
-    $scope.profile = data;
-  });
-  
+            // route for the about page
+            .when('/home', {
+                templateUrl : 'pages/home.html',
+                controller  : 'mywebCtrl'
+            })
+
+            // route for the contact page
+            .when('/contact', {
+                templateUrl : 'pages/contact.html',
+                controller  : 'contactController'
+            })
+            .otherwise({ redirectTo: '/login' });
+    });
+
+    // create the controller and inject Angular's $scope
+    phonecatApp.controller('mainController', function($scope) {
+        // create a message to display in our view
+       
+    });
+
+    phonecatApp.controller('mywebCtrl', function($scope) {
+
+    });
+
+    phonecatApp.controller('contactController', function($scope) {
+        $scope.message = 'Contact us! JK. This is just a demo.';
+    });
+	
+phonecatApp.run(function (editableOptions) {
+    editableOptions.theme='bs3';
+});
+phonecatApp.controller('mywebCtrl', function ($location,$scope,$firebaseArray,$firebaseObject,$firebaseAuth) {
+    var ref= new Firebase("https://sonhoang0611.firebaseio.com/");
+	$scope.person = $firebaseObject(ref);
+
+    $scope.authObj=$firebaseAuth(ref);
+
+    $scope.Login=function()
+    {
+
+        $scope.authObj.$authWithOAuthPopup("google").then(function(authData) {
+            console.log("Logged in as:", authData.uid);
+            $location.path('/home');
+        }).then(function() {
+            // Never called because of page redirect
+        }).catch(function(error) {
+            console.error("Authentication failed:", error);
+        });
+    };
+
+    $scope.Login2=function()
+    {
+        $scope.authObj.$authWithOAuthPopup("facebook").then(function(authData) {
+            console.log("Logged in as:", authData.uid);
+            $location.path('/home');
+        }).then(function() {
+            // Never called because of page redirect
+        }).catch(function(error) {
+            console.error("Authentication failed:", error);
+        });
+    };
+
+    $scope.Logout=function()
+    {
+        $scope.authObj.$unauth();
+        $scope.authObj.$onAuth(function(authData) {
+            if (authData) {
+                console.log("Authenticated with uid:", authData.uid);
+            } else {
+                console.log("Client unauthenticated.")
+                $scope.login=false;
+            }
+        });
+
+    };
+    
    $scope.addSkill = function () {
 
                 if (angular.isDefined($scope.name) && angular.isDefined($scope.score) && $scope.name != '' && $scope.score != '') 
