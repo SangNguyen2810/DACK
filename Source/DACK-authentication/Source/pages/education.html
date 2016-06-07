@@ -1,0 +1,57 @@
+﻿<!-- <div id="menu">
+		<ul>
+			<li><img src="./image/linkedin.png" atl="linkedin"></li>
+			<li><a href="#">Trang chủ</a></li>
+			<li><a href="#">Diễn đàn</a></li>
+			<li><a href="#">Tin tức</a></li>
+			<li><a href="#">Hỏi đáp</a></li>
+			<li><a href="#">Liên hệ</a></li>
+		</ul>
+	</div> -->
+<div id="menu">
+    <ul>
+        <li><a href="#/login" class="hvr-shutter-out-horizontal">SIGN IN</a></li>
+        <li><a href="#/home" class="hvr-shutter-out-horizontal">HOME</a></li>
+        <li><a href="#/home" class="hvr-shutter-out-horizontal">ABOUT</a></li>
+        <li><a href="#/home" class="hvr-shutter-out-horizontal">PROJECT</a></li>
+        <li><a href="#/home" class="hvr-shutter-out-horizontal">NEW</a></li>
+        <li><a href="#/home" class="hvr-shutter-out-horizontal">CONTACT</a></li>
+    </ul>
+</div>
+<div class="cover">
+    <div class="music">
+        <div class="banner">
+            <p class="animated fadeInDown">Welcome to my Website</p>
+        </div>
+        <!--<div class="audio">-->
+            <!--<audio controls loop>-->
+                <!--<source src="audio.mp3" type="audio/mpeg" >-->
+            <!--</audio>-->
+        <!--</div>-->
+    </div>
+	
+
+    <div id="summary">
+        <img src="image/edu2.jpg" alt="img01"/>
+    </div>
+
+        <!-- Mục summary -->
+        <div class="demuc" ng-init="listSum=[]">
+            <div class="ten">
+                    <p>Education</p>
+                    <hr>
+            </div>
+            <div id="curr" class="description">
+                <h2>
+                    <span href="#" editable-text="person.education">{{ person.education|| "empty" }}</span>
+                </h2>
+                <p>
+                    <span href="#" editable-text="person.specialist">{{ person.specialist || "empty" }}</span>
+                </p>
+                <p>
+                    <span href="#" editable-text="person.year">{{ person.year || "empty" }}</span>
+                </p>
+                <hr>
+            </div>
+        </div>
+</div>
