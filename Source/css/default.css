@@ -2,77 +2,109 @@
 	display: block;
 }
 
-#menu li {
-  color: #f1f1f1;
-  display: inline-block;
-  width: 120px;
-  height: 40px;
-  line-height: 40px;
-  margin-left: -5px;
-  text-align: center;
+.login {
+	height: 750px;
+	background-image: url('../image/login.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	text-align: center;
 }
 
-#menu li img {
-	height: 38px;
-	width: auto;
+.login>div{
+	display: block;
+}
+
+.signin{
+	margin: 0 auto;
+	width:30%;
+	padding: 30px;
+	background: white;
+}
+
+.signin2{
+	padding: 30px;
+	line-height: 40px;
+	color: white;
+}
+
+.space{
+	padding-top: 150px;
+}
+
+#menu li {
+  color: black;
+  display: inline-block;
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
 }
 
 #menu ul {
+	margin: 0 auto;
+	width: 100%;
   position: fixed;
-  background: #777777;
+  background: #333333;
   list-style-type: none;
-  width: 100%;
-  z-index: 1;
-  
-}
-
-#menu li:first-child{
-	margin-left: 235px;
+	z-index: 1;
+	text-align: center;
 }
 
 #menu a {
   text-decoration: none;
-  color: #fff;
+  color: #cccccc;
   display: block;
 }
+
 #menu a:hover {
-  background: #F1F1F1;
-  color: #333;
+	color: black;
+}
+
+#menu{
+	margin: 0 auto;
+	width: 100%;
 }
 
 .cover{
-	padding-top: 140px;
+	padding-top: 100px;
 	padding-bottom: 30px;
-	background: url('../image/rain.gif') #cdc9c9;
-    background-repeat: repeat-x; /* for horizontal repeat */
-	height:100%;
-	transition: background ease-in 2s;
+	background-image: url('../image/image.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
 }
 
-.cover.on{
-	background: url('../image/rain2.gif') #eec591;
-	background-repeat: repeat-x; /* for horizontal repeat */
-	height:100%;
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	width: 100%;
+	margin: auto;
 }
 
+.carousel{
+	width: 70%;
+	margin: auto;
+}
 
 .music>div{
-	display:inline-block;
+
+	display: block;
 }
 
-.changeImage{
-	display: flex;
-	align-items: center;	
-	margin-left: auto;	
+.banner{
+	color: white;
+	font-weight: bold;
+	font-family: "Axure Handwriting";
+	font-size: 45px;
+	padding-bottom: 50px;
 }
 
 .music{
-	margin:0 auto;
-	width:60%;
-	display: flex;
-	vertical-align: center;
-	align-items: top;
-	justify-content: right;
+	text-align: center;
 }
 
 a:link, a:visited, a:active { 
@@ -86,33 +118,26 @@ a:hover{
 
 .info{
 	margin:0 auto;
-	width:60%;
+	width:70%;
+	margin-top: 50px;
 	margin-bottom: 30px;
 	display: flex;
-	align-items: top;
+	/*align-items: top;*/
 	justify-content: left;
 	background: white;
+	border-radius: 123px;
 }
 
-#avatar{
-	position: relative;
-	height: 220px;
-	width: 220px;
+.image img{
 	margin-right: 30px;
+	height: 250px;
+	width: auto;
+	border-radius: 50%;
+	border: 2px solid black;
 }
 
-#avatar img.transparent {
-	opacity:0;
-}
-
-#avatar img{
-	position: absolute;
-	height: 220px;
-	width: 220px;
-	-webkit-transition: opacity 3s ease-in-out;
-	-moz-transition: opacity 3s ease-in-out;
-	-o-transition: opacity 3s ease-in-out;
-	transition: opacity 3s ease-in-out;
+.profile{
+	background: transparent;
 }
 
 .hoten{
@@ -126,7 +151,7 @@ a:hover{
 .more1{
 	display: flex;
 	vertical-align: center;
-	align-items: top;
+	/*align-items: top;*/
 	justify-content: left;
 }
 
@@ -180,9 +205,9 @@ a:hover{
 
 .backgr{
 	margin:0 auto;
-	width:60%;
+	width:70%;
 	height:60%;
-	float:center;
+
 	background:white;
 }
 
@@ -202,16 +227,13 @@ a:hover{
 }
 
 hr {
-	
-    height: 1px;
-    
-	border-top: 1px solid red;
+	border-top: 1px solid lightgray;
 }
 
 .tieude{
 	display: flex;
 	vertical-align: center;
-	align-items: top;
+	/*align-items: top;*/
 	justify-content: left;
 }
 
@@ -227,6 +249,7 @@ hr {
 
 .tieude>div{
 	display:inline-block;
+	
 }
 
 .content{	
