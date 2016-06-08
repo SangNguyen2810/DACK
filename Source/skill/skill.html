@@ -1,0 +1,112 @@
+﻿<div id="menu">
+    <ul>
+        <li><a href="#/login" class="hvr-shutter-out-horizontal">SIGN IN</a></li>
+        <li><a href="#/home" class="hvr-shutter-out-horizontal">HOME</a></li>
+        <li><a href="#/summary" class="hvr-shutter-out-horizontal">SUMMARY</a></li>
+        <li><a href="#/experience" class="hvr-shutter-out-horizontal">EXPERIENCE</a></li>
+        <li><a href="#/skill" class="hvr-shutter-out-horizontal">SKILLS</a></li>
+        <li><a href="#/hobby"  class="hvr-shutter-out-horizontal">HOBBIES</a></li>
+    </ul>
+</div>
+<div class="cover">
+    <div class="music">
+        <div class="banner">
+            <p class="animated fadeInDown">Welcome to my Website</p>
+        </div>
+        <!--<div class="audio">-->
+            <!--<audio controls loop>-->
+                <!--<source src="audio.mp3" type="audio/mpeg" >-->
+            <!--</audio>-->
+        <!--</div>-->
+    </div>
+	
+
+    <div id="summary">
+        <img class="hvr-wobble-horizontal" src="image/skill2.jpg" alt="img01"/>
+    </div>
+
+        <!-- Mục summary -->
+        <div class="demuc">
+            <div class="ten">
+                    <p>SKILLS</p>
+                    <hr>
+            </div>
+            <div class="diem">
+                <div class="form-group row">
+                    <span class="col-md-2" href="#" editable-text="person.skill.skill0">{{ person.skill.skill0}}</span>
+                    <div class="progress">
+                        <div class="progress-bar col-md-3" role="progressbar" aria-valuenow="person.score.score0" aria-valuemin="0" aria-valuemax="100" style="width:{{person.score.score0}}%">
+                            {{person.score.score0}}%
+                        </div>
+                    </div>
+                 </div>
+
+                <div class="form-group row">
+                    <span class="col-md-2" href="#" editable-text="person.skill.skill1">{{ person.skill.skill1}}</span>
+                    <div class="progress">
+                        <div class="progress-bar col-md-3" role="progressbar" aria-valuenow="person.score.score1" aria-valuemin="0" aria-valuemax="100" style="width:{{person.score.score1}}%">
+                            {{person.score.score1}}%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <span class="col-md-2" href="#" editable-text="person.skill.skill2">{{ person.skill.skill2}}</span>
+                    <div class="progress">
+                        <div class="progress-bar col-md-3" role="progressbar" aria-valuenow="person.score.score2" aria-valuemin="0" aria-valuemax="100" style="width:{{person.score.score2}}%">
+                            {{person.score.score2}}%
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <span class="col-md-2" href="#" editable-text="person.skill.skill3">{{ person.skill.skill3}}</span>
+                    <div class="progress">
+                        <div class="progress-bar col-md-3" role="progressbar" aria-valuenow="person.score.score3" aria-valuemin="0" aria-valuemax="100" style="width:{{person.score.score3}}%">
+                            {{person.score.score3}}%
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <span class="col-md-2" href="#" editable-text="person.skill.skill4">{{ person.skill.skill4}}</span>
+                    <div class="progress">
+                        <div class="progress-bar col-md-3" role="progressbar" aria-valuenow="person.score.score4" aria-valuemin="0" aria-valuemax="100" style="width:{{person.score.score4}}%">
+                            {{person.score.score4}}%
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <span class="col-md-2" href="#" editable-text="person.skill.skill5">{{ person.skill.skill5}}</span>
+                    <div class="progress">
+                        <div class="progress-bar col-md-3" role="progressbar" aria-valuenow="person.score.score5" aria-valuemin="0" aria-valuemax="100" style="width:{{person.score.score5}}%">
+                            {{person.score.score5}}%
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <span class="col-md-2" href="#" editable-text="person.skill.skill6">{{ person.skill.skill6 }}</span>
+                    <div class="progress">
+                        <div class="progress-bar col-md-3" role="progressbar" aria-valuenow="person.score.score6" aria-valuemin="0" aria-valuemax="100" style="width:{{person.score.score6}}%">
+                            {{person.score.score6}}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="display">
+        <p class="in">{{user}} <a class="out" ng-click="Logout()">Log out</a></p>
+    </div>
+
+    <div class="footer">
+        <div class="footer2">
+            <div class="follow">
+                <p>Copyright 2016 by Hattrick group. Follow us on</p>
+            </div>
+            <div class="fbIcon">
+                <a href="https://www.facebook.com/HattrickGroup"><img  src="./image/facebook.png"/></a>
+            </div>
+        </div>
+    </div>
+</div>

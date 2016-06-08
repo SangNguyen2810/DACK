@@ -1,0 +1,69 @@
+﻿<div id="menu">
+    <ul>
+        <li><a href="#/login" class="hvr-shutter-out-horizontal">SIGN IN</a></li>
+        <li><a href="#/home" class="hvr-shutter-out-horizontal">HOME</a></li>
+        <li><a href="#/summary" class="hvr-shutter-out-horizontal">SUMMARY</a></li>
+        <li><a href="#/experience" class="hvr-shutter-out-horizontal">EXPERIENCE</a></li>
+        <li><a href="#/skill" class="hvr-shutter-out-horizontal">SKILLS</a></li>
+        <li><a href="#/hobby"  class="hvr-shutter-out-horizontal">HOBBIES</a></li>
+    </ul>
+</div>
+<div class="cover">
+    <div class="music">
+        <div class="banner">
+            <p class="animated fadeInDown">Welcome to my Website</p>
+        </div>
+        <!--<div>-->
+            <!--<audio controls autoplay loop class="audio">-->
+                <!--<source src="audio.mp3" type="audio/mpeg" >-->
+            <!--</audio>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<p>{{user.google.displayName}}</p>-->
+            <!--<button>Log out</button>-->
+        <!--</div>-->
+    </div>
+	
+
+    <div id="summary">
+        <img class="hvr-wobble-horizontal" src="image/project2.jpg" alt="img01"/>
+    </div>
+
+        <!-- Mục summary -->
+        <div class="demuc">
+            <div class="ten">
+                    <p>PROJECT</p>
+                    <hr>
+            </div>
+            <div id="curr" class="description">
+
+                    <h2>Các đồ án yêu thích trong các học kì trước:</h2>
+                    <p>
+                        <span href="#" editable-text="person.proj.proj0">{{ person.proj.proj0 || "empty" }}</span>
+                    </p>
+                    <p>
+                        <span href="#" editable-text="person.proj.proj1">{{ person.proj.proj1 || "empty" }}</span>
+                    </p>
+                    <p>
+                        <span href="#" editable-text="person.proj.proj2">{{ person.proj.proj2 || "empty" }}</span>
+                    </p>
+                    <hr>
+
+            </div>
+        </div>
+
+    <div class="display">
+        <p class="in">{{user}} <a class="out" ng-click="Logout()">Log out</a></p>
+    </div>
+
+    <div class="footer">
+        <div class="footer2">
+            <div class="follow">
+                <p>Copyright 2016 by Hattrick group. Follow us on</p>
+            </div>
+            <div class="fbIcon">
+                <a href="https://www.facebook.com/HattrickGroup"><img  src="./image/facebook.png"/></a>
+            </div>
+        </div>
+    </div>
+</div>
