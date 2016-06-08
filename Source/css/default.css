@@ -3,7 +3,7 @@
 }
 
 .login {
-	height: 750px;
+	height: 789px;
 	background-image: url('../image/login.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -107,13 +107,16 @@
 	text-align: center;
 }
 
-a:link, a:visited, a:active { 
-	color: gray;
+a:link, a:visited, a:active {
 	text-decoration: none;
 }
 
 a:hover{
 	text-decoration: none;
+}
+
+.audio{
+	display: none;
 }
 
 .info{
@@ -124,8 +127,10 @@ a:hover{
 	display: flex;
 	/*align-items: top;*/
 	justify-content: left;
-	background: white;
+	background: rgba(75,75,75,0.3);
 	border-radius: 123px;
+	color: #cccccc;
+	font-size: 18px;
 }
 
 .image img{
@@ -136,8 +141,13 @@ a:hover{
 	border: 2px solid black;
 }
 
-.profile{
-	background: transparent;
+#summary{
+	margin:0 auto;
+	width:70%;
+}
+
+#summary img{
+	width:100%;
 }
 
 .hoten{
@@ -203,14 +213,6 @@ a:hover{
 	width: 30%;
 }
 
-.backgr{
-	margin:0 auto;
-	width:70%;
-	height:60%;
-
-	background:white;
-}
-
 .header{
 	width: 12%;
 	height: 35px;
@@ -265,4 +267,43 @@ hr {
 
 .logo{
 	float:right;
+}
+
+.demuc{
+	margin: 0 auto;
+	width: 70%;
+	padding: 30px 0px 30px 0px;
+	background: rgba(75,75,75,0.3);
+	font-weight: bold;
+	font-size: 18px;
+	color: #cccccc;
+}
+
+.diem {
+	width: 99%;
+}
+
+.ten{
+	text-align: center;
+	font-size: 24px;
+}
+
+.display{
+	margin-right: 10px;
+	float: right;
+	font-weight: bold;
+}
+
+.out{
+	cursor: pointer;
+}
+
+.in{
+	color: #EEEE00;
+}
+
+
+.ThongBao{
+	color: forestgreen;
+	font-size: 15px;
 }

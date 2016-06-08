@@ -90,14 +90,15 @@
 .editable-click,
 a.editable-click {
   text-decoration: none;
-  color: #333;
+  color: white;
+  font-weight: bold;
 }
 
 .editable-click:hover, 
 a.editable-click:hover {
   cursor:pointer;
   text-decoration: none;
-  color: blue;
+  color: #EEEE00;
   border-bottom-color: #2a6496;
 }
 
