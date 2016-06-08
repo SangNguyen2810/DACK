@@ -90,82 +90,160 @@ phonecatApp.config(function($routeProvider,$locationProvider) {
 
     phonecatApp.controller('RegController', function($location,$scope,$firebase,$firebaseArray,$firebaseObject,$firebaseAuth) {
         var ref= new Firebase("https://sonhoang0611.firebaseio.com");
-        $scope.SignUp=function() {
-            ref.createUser({
-                email: $scope.username,
-                password: $scope.password
-            }, function (error, authData) {
-                if (error) {
-                    switch (error.code) {
-                        case "EMAIL_TAKEN":
-                            alert("The new user account cannot be created because the email is already in use.");
-                            break;
-                        case "INVALID_EMAIL":
-                            alert("The specified email is not a valid email.");
-                            break;
-                        default:
-                            alert("Error creating user:", error);
-                    }
-
+        $scope.CheckChuSo=function(ChuSo){
+            var CheckDigit = false;//CheckSo
+            var CheckChar = false;//CheckChu
+            for(var i=0;i<ChuSo.length;i++)
+            {
+                var char = ChuSo.charAt(i);
+                if(char>='0'&&char<='9')
+                {
+                    CheckDigit = true;
+                    break;
                 }
-            });
+            }
+            for(var i=0;i<ChuSo.length;i++)
+            {
+                var char = ChuSo.charAt(i);
+                if((char>='A'&&char<='Z')||(char>='a'&&char<='z'))
+                {
+                    CheckChar = true;
+                    break;
+                }
+            }
+            if(CheckChar == false || CheckDigit == false)
+            {
+                return false;
+            }
+            else return true;
         };
-        $scope.CheckConfirmPassword=function(password,password2){
+        $scope.Check1=function() {
+            var x = $scope.password;
+            var Check = $scope.CheckChuSo($scope.password);
+
+            if (Check == false) {
+                $scope.THONGBAO1 = "Ô password phải có đầy đủ chữ (a,b,c) hoặc số (0,1,2)";
+                return false;
+            }
+            else {
+                $scope.THONGBAO1 = "";
+                return true;
+            }
+
+        };
+        $scope.Check2=function(password,password2) {
+
             if(password != password2)
             {
                 $scope.THONGBAO2="Bạn phải nhập giống với ô password";
-            }
-        };
-        $scope.Check1=function(){
-            var x = $scope.password;
-            if(!x)
-            {
-                $scope.THONGBAO1="Bạn phải điền vào ô password";
-            }
-            else
-            {
-                var CheckDigit = false;
-                var CheckChar = false;
-                for(var i=0;i<x.length;i++)
-                {
-                    var char = x.charAt(i);
-                    if(char>='0'&&char<='9')
-                    {
-                        CheckDigit = true;
-                        break;
-                    }
-                }
-                for(var i=0;i<x.length;i++)
-                {
-                    var char = x.charAt(i);
-                    if((char>='A'&&char<='Z')||(char>='a'&&char<='z'))
-                    {
-                        CheckChar = true;
-                        break;
-                    }
-                }
-                if(CheckChar == false || CheckDigit == false)
-                {
-                    $scope.THONGBAO1="Chuỗi của bạn phải vừa có chữ vừa có số!";
-                }
-                else
-                {
-                    $scope.THONGBAO1="";
-                }
-
-            }
-        };
-        $scope.Check2=function(){
-            var x = $scope.password2;
-            if(!x)
-            {
-                $scope.THONGBAO2="Bạn phải điền vào ô xác nhận password";
+                return false;
             }
             else
             {
                 $scope.THONGBAO2="";
+                return true;
             }
+
+
+
         }
+
+        $scope.SignUp=function() {
+            var CheckPass1 = $scope.Check1();
+            var CheckPass2 = $scope.Check2(password,password2);
+            if(CheckPass1 == false || CheckPass2 == false)
+            {
+                $scope.THONGBAO3="Bạn phải điền đúng password và xác nhận password trước khi đăng ký tài khoản!";
+                
+            }
+            else {
+                $scope.THONGBAO3 = "";
+
+                ref.createUser({
+                    email: $scope.username,
+                    password: $scope.password
+                }, function (error, authData) {
+                    if (error) {
+                        switch (error.code) {
+                            case "EMAIL_TAKEN":
+                                alert("The new user account cannot be created because the email is already in use.");
+                                break;
+                            case "INVALID_EMAIL":
+                                alert("The specified email is not a valid email.");
+                                break;
+                            default:
+                                alert("Error creating user:", error);
+                        }
+
+                    }
+                });
+            }
+        };
+
+
+
+
+        // $scope.CheckConfirmPassword=function(password,password2){
+        //     if(password != password2)
+        //     {
+        //         $scope.THONGBAO2="Bạn phải nhập giống với ô password";
+        //
+        //     }
+        //
+        // };
+        // $scope.Check1=function(){
+        //     var x = $scope.password;
+        //     if(!x)
+        //     {
+        //         $scope.THONGBAO1="Bạn phải điền vào ô password";
+        //
+        //     }
+        //     else
+        //     {
+        //         var CheckDigit = false;
+        //         var CheckChar = false;
+        //         for(var i=0;i<x.length;i++)
+        //         {
+        //             var char = x.charAt(i);
+        //             if(char>='0'&&char<='9')
+        //             {
+        //                 CheckDigit = true;
+        //                 break;
+        //             }
+        //         }
+        //         for(var i=0;i<x.length;i++)
+        //         {
+        //             var char = x.charAt(i);
+        //             if((char>='A'&&char<='Z')||(char>='a'&&char<='z'))
+        //             {
+        //                 CheckChar = true;
+        //                 break;
+        //             }
+        //         }
+        //         if(CheckChar == false || CheckDigit == false)
+        //         {
+        //             $scope.THONGBAO1="Chuỗi của bạn phải vừa có chữ vừa có số!";
+        //
+        //         }
+        //         else
+        //         {
+        //             $scope.THONGBAO1="";
+        //
+        //         }
+        //
+        //     }
+        // };
+        // $scope.Check2=function(){
+        //     var x = $scope.password2;
+        //     if(!x)
+        //     {
+        //         $scope.THONGBAO2="Bạn phải điền vào ô xác nhận password";
+        //     }
+        //     else
+        //     {
+        //         $scope.THONGBAO2="";
+        //     }
+        // }
     });
 
 	
