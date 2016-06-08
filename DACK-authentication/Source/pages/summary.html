@@ -1,0 +1,99 @@
+﻿<!-- <div id="menu">
+		<ul>
+			<li><img src="./image/linkedin.png" atl="linkedin"></li>
+			<li><a href="#">Trang chủ</a></li>
+			<li><a href="#">Diễn đàn</a></li>
+			<li><a href="#">Tin tức</a></li>
+			<li><a href="#">Hỏi đáp</a></li>
+			<li><a href="#">Liên hệ</a></li>
+		</ul>
+	</div> -->
+<div id="menu">
+    <ul>
+        <li><a href="#/login" class="hvr-shutter-out-horizontal">SIGN IN</a></li>
+        <li><a href="#/home" class="hvr-shutter-out-horizontal">HOME</a></li>
+        <li><a href="#/home" class="hvr-shutter-out-horizontal">ABOUT</a></li>
+        <li><a href="#/home" class="hvr-shutter-out-horizontal">PROJECT</a></li>
+        <li><a href="#/home" class="hvr-shutter-out-horizontal">NEW</a></li>
+        <li><a href="#/home" class="hvr-shutter-out-horizontal">CONTACT</a></li>
+    </ul>
+</div>
+<div class="cover">
+    <div class="music">
+        <div class="banner">
+            <p class="animated fadeInDown">Welcome to my Website</p>
+        </div>
+        <!--<div class="audio">-->
+            <!--<audio controls loop>-->
+                <!--<source src="audio.mp3" type="audio/mpeg" >-->
+            <!--</audio>-->
+        <!--</div>-->
+    </div>
+	
+
+    <div id="summary">
+        <img src="image/summary2.jpg" alt="img01"/>
+    </div>
+
+        <!-- Mục summary -->
+        <div class="demuc" ng-init="listSum=[]">
+            <div class="ten">
+                    <p>SUMMARY</p>
+                    <hr>
+            </div>
+            <div id="curr" class="description">
+                <div class="form-group row">
+                    <div class="col-md-2"></div>
+                    <p class="col-md-5">Họ và tên: </p>
+                    <div class="col-md-4">
+                        <span href="#" editable-text="person.name">{{ person.name || "empty" }}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-2"></div>
+                    <p class="col-md-5">Ngày tháng năm sinh: </p>
+                    <div class="col-md-4">
+                        <span href="#" editable-text="person.born">{{ person.born || "empty" }}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-2"></div>
+                    <p class="col-md-5">Email: </p>
+                    <div class="col-md-4">
+                        <span href="#" editable-text="person.email">{{ person.email || "empty" }}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-2"></div>
+                    <p class="col-md-5">Ngoại ngữ: </p>
+                    <div class="col-md-4">
+                        <span href="#" editable-text="person.language">{{ person.language || "empty" }}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-2"></div>
+                    <p class="col-md-5">Kinh nghiệm làm việc: </p>
+                    <div class="col-md-4">
+                        <span href="#" editable-text="person.exp">{{ person.exp || "empty" }}</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-2"></div>
+                    <p class="col-md-5">Điểm mạnh: </p>
+                    <div class="col-md-4">
+                        <span href="#" editable-text="person.ability">{{ person.ability || "empty" }}</span>
+                    </div>
+                </div>
+
+                <div class="form-group row" ng-repeat="sum in listSum">
+                    <div class="col-md-2"></div>
+                    <p class="col-md-5">{{sum.label}}</p>
+                    <div class="col-md-4">
+                        <span href="#" editable-text="sum.information">{{ sum.information || "empty" }}</span>
+                    </div>
+                </div>
+
+                <hr>
+            </div>
+        </div>
+</div>

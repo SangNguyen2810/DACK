@@ -1,0 +1,297 @@
+.input>div{
+	display: block;
+}
+
+.login {
+	height: 750px;
+	background-image: url('../image/login.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	text-align: center;
+}
+
+.login>div{
+	display: block;
+}
+
+.signin{
+	margin: 0 auto;
+	width:30%;
+	padding: 30px;
+	background: white;
+}
+
+.signin2{
+	padding: 30px;
+	line-height: 40px;
+	color: white;
+}
+
+.space{
+	padding-top: 150px;
+}
+
+#menu li {
+  color: black;
+  display: inline-block;
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#menu ul {
+	margin: 0 auto;
+	width: 100%;
+  position: fixed;
+  background: #333333;
+  list-style-type: none;
+	z-index: 1;
+	text-align: center;
+}
+
+#menu a {
+  text-decoration: none;
+  color: #cccccc;
+  display: block;
+}
+
+#menu a:hover {
+	color: black;
+}
+
+#menu{
+	margin: 0 auto;
+	width: 100%;
+}
+
+.cover{
+	padding-top: 100px;
+	padding-bottom: 30px;
+	background-image: url('../image/image.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	width: 100%;
+	margin: auto;
+}
+
+.carousel{
+	width: 70%;
+	margin: auto;
+}
+
+.music>div{
+
+	display: block;
+}
+
+.banner{
+	color: white;
+	font-weight: bold;
+	font-family: "Axure Handwriting";
+	font-size: 45px;
+	padding-bottom: 50px;
+}
+
+.music{
+	text-align: center;
+}
+
+a:link, a:visited, a:active {
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+.info{
+	margin:0 auto;
+	width:70%;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	display: flex;
+	/*align-items: top;*/
+	justify-content: left;
+	background: rgba(75,75,75,0.3);
+	border-radius: 123px;
+	color: #cccccc;
+	font-size: 18px;
+}
+
+.image img{
+	margin-right: 30px;
+	height: 250px;
+	width: auto;
+	border-radius: 50%;
+	border: 2px solid black;
+}
+
+#summary{
+	margin:0 auto;
+	width:70%;
+}
+
+#summary img{
+	width:100%;
+}
+
+.hoten{
+	font-weight: bold;
+}
+
+.chuvua{
+	font-size:15pt;
+}
+
+.more1{
+	display: flex;
+	vertical-align: center;
+	/*align-items: top;*/
+	justify-content: left;
+}
+
+.extra>div{
+	line-height: 80%;
+	font-size:10pt;
+	display:inline-block;
+}
+
+.skill{
+	line-height: 200%;
+}
+
+.skill>div{
+	margin: 20px;
+}
+
+.eachRow>div{
+	display: inline-block;
+	padding: 7px;
+}
+
+.score{
+	font-weight: bold;
+	color: white;
+	background: #1e90ff;	
+}
+
+.stuff{
+	background: lightgray;
+}
+
+.extraRow>div{
+	display: inline-block;
+	margin-right: 30px;
+}
+
+.combine>div{
+	display: inline-block;
+}
+
+.extra1{
+	color: gray;
+	margin-right: 30px;
+}
+
+.extra2{
+	position: absolute;
+	width: 30%;
+}
+
+.backgr{
+	margin:0 auto;
+	width:70%;
+	height:60%;
+
+	background:white;
+}
+
+.header{
+	width: 12%;
+	height: 35px;
+	display: flex;
+	font-weight: bold;
+    align-items: center;
+    justify-content: center;
+	color: white;
+	background: black;
+}
+
+.mucluc{
+	padding: 20px;
+}
+
+hr {
+	border-top: 1px solid lightgray;
+}
+
+.tieude{
+	display: flex;
+	vertical-align: center;
+	/*align-items: top;*/
+	justify-content: left;
+}
+
+.tieude .add{
+	display: flex;
+	align-items: center;	
+	margin-left: auto;	
+}
+
+.icon{
+	padding-right: 20px;
+}
+
+.tieude>div{
+	display:inline-block;
+	
+}
+
+.content{	
+	font-size: 20pt;
+}
+
+
+.description2>div{
+	
+	display:inline-block;
+	
+}
+
+.logo{
+	float:right;
+}
+
+.demuc{
+	margin: 0 auto;
+	width: 70%;
+	padding: 30px 0px 30px 0px;
+	background: rgba(75,75,75,0.3);
+	font-weight: bold;
+	font-size: 18px;
+	color: #cccccc;
+}
+
+.diem {
+	width: 99%;
+}
+
+.ten{
+	text-align: center;
+	font-size: 24px;
+}
+.ThongBao{
+	color: forestgreen;
+	font-size: 15px;
+}
